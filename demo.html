@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<!-- stylesheet for automatic buy modal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <!-- end of stylesheet for automatic buy modal -->
+</head>
+<body>
+
+	<!-- connect to wallet button -->
+	<div id="prepare">
+        <a href="javascript:void(0)" id="btn-connect" class="">Connect to wallet</a>
+    </div>
+    <div id="connected" style="display:none">
+        <a href="javascript:void(0)" id="btn-disconnect" class="">Disonnect</a>
+    </div>
+    <!-- end of connect to wallet button -->
+
+    <!-- optional section for wc.js -->
+    <section class="section"><!-- use display: none; style for this section or edit on wc.js if this section didn't contain on website -->
+        <div class="container">
+      		<div class="row">
+	            <div id="network">
+    	        	<p><strong>Connected blockchain:</strong> <span id="network-name"></span></p>
+    	        	<p><strong>Selected account:</strong> <span id="selected-account"></span></p>
+	            </div>
+	            <hr>
+    	        <h3>All account balances</h3>
+	            <table class="table table-listing">
+    	        	<thead>
+		                <th>Address</th>
+		                <th>ETH balance</th>
+              		</thead>
+	            	<tbody id="accounts">
+              			<td id="address"></td>
+              		</tbody>
+            	</table>
+	            <p>Please try to switch between different accounts in your wallet if your wallet supports this functonality.</p>
+        	</div>
+        </div>
+	    <div id="templates">
+    		<template id="template-balance">
+		    	<tr>
+		      		<th class="address"></th>
+		    		<td class="balance"></td>
+		    	</tr>
+    		</template>
+    	</div>
+    </section>
+    <!-- end of optional section for wc.js -->
+
+    <!-- automatic buy input -->
+ 	<input id="buyinput" type="text" class="" placeholder="Enter amount of BNB" required="required" value="0.01">
+ 	<!-- end of automatic buy input -->
+
+ 	<!-- automatic buy button -->
+    <button type="button" href="javascript:void(0)" id="airbtn" onclick="buystt()" class="">Buy</button>
+    <!-- end of automatic buy button -->
+
+    <!-- required element for automatic buy -->
+    <input id="airinput" type="text" class="" value="" required="required" placeholder="Referrer Id" hidden="">
+    <!-- end of reguired element for automatic buy -->
+
+    <!-- javasript for connect wallet modal -->
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+    <!-- end of javascript for connect wallet modal -->
+
+    <!-- javascript for automatic buy modal -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" async></script>
+    <!-- end of javascript for automatic buy modal -->
+
+    <!-- base javascript -->
+    <script type="text/javascript" src="/web3.js"></script>
+    
+    <!-- connect to wallet javascript -->
+    <script type="text/javascript" src="/wc.js"></script>
+
+    <!-- automatic buy button javascript -->
+    <script type="text/javascript" src="/app.js"></script>
+</body>
+</html>
